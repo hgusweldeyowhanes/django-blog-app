@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" action="">
+    <h4>Edit</h4>
+    {% csrf_token %}
+    <textarea  name="body" cols="20" rows="4">{{message.body}}</textarea><br>
+    <input type="submit" value="save">
+</form>
+<a href="{% url 'product:room' message.room.id %}">Canccel</a>
+
+{% endblock content %}

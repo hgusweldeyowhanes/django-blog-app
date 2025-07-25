@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<h4>Create Poll</h4>
+<form  method = "post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <label>Choice 1:</label><input type = "text" name = "choice 1"><br>
+  <label>Choice 2:</label><input type = "text" name = "choice 2"><br>
+  <label>Choice 3:</label><input type = "text" name = "choice 3"><br>
+  <label>Choice 4:</label><input type = "text" name = "choice 4"><br>
+  <button type = "submit">Create Poll</button>
+
+</form>
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h2> {{poll.question}}</h2>
+<p>room:{{poll.room.name}}| created_by:{{poll.created_by.username}}</p>
+
+{%if voted %}
+ <p><strong> You are already voted</strong></p>
+{% else %}
+ <form method = "post" action = "{% url 'product:vote_poll' poll.id %}">
+    {% csrf_token %}
+    {% for c in choices %}
+      <label> 
+        <input type = "radio" name = "choice" value = "{{c.id}}">{{c.text}}
+      </label><br>
+      {% endfor %}
+      <button type = "submit">vote</button>
+    </form>
+{% endif %}
+<h4>Current Votes:</h4>
+<ul>
+    {% for c in choices %}
+        <li>{{ c.text }} - {{ c.vote_set.count }} votes</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
