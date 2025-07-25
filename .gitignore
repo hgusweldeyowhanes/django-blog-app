@@ -1,0 +1,32 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Django DB file
+db.sqlite3
+
+# Environment variables
+.env
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# VS Code and PyCharm settings
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Django migrations (optional)
+**/migrations/
+**/migrations/*.py
+**/migrations/__pycache__/
+
+# Logs
+*.log
+
